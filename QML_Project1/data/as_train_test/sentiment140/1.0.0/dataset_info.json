@@ -1,0 +1,47 @@
+{
+  "citation": "@ONLINE {Sentiment140,\n    author = \"Go, Alec and Bhayani, Richa and Huang, Lei\",\n    title  = \"Twitter Sentiment Classification using Distant Supervision\",\n    year   = \"2009\",\n    url    = \"http://help.sentiment140.com/home\"\n}",
+  "description": "Sentiment140 allows you to discover the sentiment of a brand, product, or topic\non Twitter.\n\nThe data is a CSV with emoticons removed. Data file format has 6 fields:\n\n1.  the polarity of the tweet (0 = negative, 2 = neutral, 4 = positive)\n2.  the id of the tweet (2087)\n3.  the date of the tweet (Sat May 16 23:58:44 UTC 2009)\n4.  the query (lyx). If there is no query, then this value is NO_QUERY.\n5.  the user that tweeted (robotickilldozr)\n6.  the text of the tweet (Lyx is cool)\n\nFor more information, refer to the paper Twitter Sentiment Classification with\nDistant Supervision at\nhttps://cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf",
+  "downloadSize": "81363704",
+  "fileFormat": "tfrecord",
+  "location": {
+    "urls": [
+      "http://help.sentiment140.com/home"
+    ]
+  },
+  "moduleName": "tensorflow_datasets.datasets.sentiment140.sentiment140_dataset_builder",
+  "name": "sentiment140",
+  "splits": [
+    {
+      "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+      "name": "train",
+      "numBytes": "319850639",
+      "shardLengths": [
+        "400000",
+        "400000",
+        "400000",
+        "400000"
+      ]
+    },
+    {
+      "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+      "name": "test",
+      "numBytes": "102723",
+      "shardLengths": [
+        "498"
+      ]
+    }
+  ],
+  "supervisedKeys": {
+    "tuple": {
+      "items": [
+        {
+          "featureKey": "text"
+        },
+        {
+          "featureKey": "polarity"
+        }
+      ]
+    }
+  },
+  "version": "1.0.0"
+}
